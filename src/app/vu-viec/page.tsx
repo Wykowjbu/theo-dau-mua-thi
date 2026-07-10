@@ -6,8 +6,8 @@ export const metadata: Metadata = {title: "Vụ việc", description: "Danh sác
 
 export default function IncidentsPage() {
   return (
-    <main id="noi-dung" className="page-shell py-12 md:py-16">
-      <header className="mb-10 max-w-3xl"><p className="eyebrow mb-4">Kho hồ sơ</p><h1 className="display-title text-5xl md:text-6xl">Vụ việc</h1><p className="mt-5 text-lg leading-8 text-muted">Tìm theo địa phương, môn thi hoặc trạng thái. Mỗi hồ sơ tách dữ kiện chính thức khỏi phân tích và nội dung còn chờ quyết định.</p></header>
+    <main id="noi-dung" className="page-shell py-8 md:py-12">
+      <header className="mb-7"><h1 className="display-title text-3xl md:text-4xl">Các vụ việc</h1><p className="mt-2 text-muted">Lọc nhanh theo tỉnh thành hoặc loại vụ việc.</p></header>
       <IncidentsExplorer items={incidents} />
     </main>
   );

@@ -58,6 +58,7 @@ export const incidents: Incident[] = [
     corrections: [],
     relatedIncidentIds: [],
     searchKeywords: ["Tuyên Quang", "THPT Chuyên", "điểm thi Toán", "thi tốt nghiệp 2026", "coi thi"],
+    quickReadFactIds: ["fact-3", "fact-4"],
     privacyNotes: "Không hiển thị tên, ảnh, số báo danh hoặc dữ liệu định danh của thí sinh.",
     legalDisclaimer,
   },

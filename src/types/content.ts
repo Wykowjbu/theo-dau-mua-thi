@@ -138,6 +138,7 @@ export interface Incident {
   corrections: Correction[];
   relatedIncidentIds: string[];
   searchKeywords: string[];
+  quickReadFactIds: string[];
   privacyNotes: string;
   legalDisclaimer: string;
 }
