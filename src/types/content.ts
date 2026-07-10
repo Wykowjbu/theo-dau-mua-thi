@@ -22,7 +22,7 @@ export interface Source {
   sourceType: string;
   publishedAt: string;
   accessedAt: string;
-  url: string;
+  url?: string;
   description: string;
   supportsClaimIds: string[];
   archivedUrl?: string;
@@ -139,6 +139,7 @@ export interface Incident {
   relatedIncidentIds: string[];
   searchKeywords: string[];
   quickReadFactIds: string[];
+  studentScope: string;
   privacyNotes: string;
   legalDisclaimer: string;
 }

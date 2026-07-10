@@ -2,6 +2,21 @@ import type {Source} from "../types/content.ts";
 
 export const sources: Source[] = [
   {
+    id: "threads-tphcm-ai-2026",
+    title: "Bài đăng Threads phản ánh nghi vấn sử dụng AI trong kỳ thi tại TP.HCM",
+    publisher: "Tài khoản Threads ẩn danh",
+    sourceLevel: "LEVEL_4_SOCIAL",
+    sourceType: "Bài đăng mạng xã hội",
+    publishedAt: "2026-07-11",
+    accessedAt: "2026-07-11",
+    description: "Nội dung do người dùng cung cấp; bài đăng không nêu danh tính, số báo danh, trường hoặc điểm thi cụ thể.",
+    supportsClaimIds: ["hcm-claim-ai", "hcm-claim-score", "hcm-fact-1", "hcm-fact-2", "hcm-fact-3", "hcm-fact-4", "hcm-fact-5", "hcm-fact-6"],
+    isOfficial: false,
+    isPrimary: true,
+    isAccessible: false,
+    notes: "Chưa có URL bài gốc. Ngày hiển thị là ngày nội dung được cung cấp cho website, không phải ngày đăng gốc. Đây là nguồn mạng xã hội duy nhất và không đủ để xác nhận cáo buộc.",
+  },
+  {
     id: "tq-ubnd-2026-07-04",
     title: "Khẩn trương xác minh, làm rõ thông tin về kết quả điểm thi môn Toán",
     publisher: "Cổng Thông tin điện tử tỉnh Tuyên Quang",

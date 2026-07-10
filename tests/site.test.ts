@@ -45,3 +45,12 @@ test("lọc đồng thời theo tỉnh và loại vụ việc", () => {
   assert.equal(filterIncidents(incidents, "", {province: "Tuyên Quang", incidentType: "Vi phạm quy chế coi thi"}).length, 1);
   assert.equal(filterIncidents(incidents, "", {province: "Hà Nội", incidentType: "all"}).length, 0);
 });
+
+test("phản ánh Threads luôn được hiển thị là cáo buộc chưa kiểm chứng", () => {
+  const incident = incidents.find((item) => item.id === "tphcm-threads-nghi-su-dung-ai-2026");
+  assert.ok(incident);
+  assert.equal(incident.overallStatus, "UNVERIFIED");
+  assert.match(incident.legalStatus, /Chưa có xác nhận/);
+  assert.equal(incident.people.length, 0);
+  assert.ok(incident.quickReadFactIds.every((id) => incident.keyFacts.some((fact) => fact.id === id && fact.status === "UNVERIFIED")));
+});

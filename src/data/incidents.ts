@@ -3,8 +3,60 @@ import type {Incident} from "../types/content.ts";
 const official = ["tq-press-2026-07-09"];
 
 export const legalDisclaimer = "Website tổng hợp thông tin từ các nguồn được dẫn lại. Việc khởi tố vụ án hoặc khởi tố bị can không phải là bản án kết tội. Trách nhiệm pháp lý chỉ được xác định bằng bản án có hiệu lực hoặc kết luận của cơ quan có thẩm quyền.";
+export const unverifiedDisclaimer = "Đây là cáo buộc từ nguồn mạng xã hội chưa được kiểm chứng. Chưa có xác nhận cơ quan có thẩm quyền đã thụ lý, điều tra hoặc kết luận. Chênh lệch điểm và lời kể gián tiếp không đủ để xác định một thí sinh đã gian lận.";
 
 export const incidents: Incident[] = [
+  {
+    id: "tphcm-threads-nghi-su-dung-ai-2026",
+    slug: "cao-buoc-chua-kiem-chung-su-dung-ai-thi-tphcm-2026",
+    title: "Bài đăng Threads cáo buộc chưa kiểm chứng về việc sử dụng AI trong kỳ thi tại TP.HCM",
+    shortTitle: "Cáo buộc chưa kiểm chứng về sử dụng AI tại điểm thi TP.HCM",
+    location: "TP. Hồ Chí Minh",
+    province: "TP. Hồ Chí Minh",
+    schoolOrTestSite: "Một điểm thi tại TP.HCM; bài đăng không nêu địa điểm cụ thể",
+    examName: "Kỳ thi tốt nghiệp THPT năm 2026",
+    examYear: 2026,
+    subject: "Chưa xác định cụ thể",
+    incidentType: "Phản ánh nghi sử dụng thiết bị và AI",
+    overallStatus: "UNVERIFIED",
+    legalStatus: "Chưa có xác nhận cơ quan có thẩm quyền đã thụ lý, điều tra, xác minh hoặc kết luận",
+    featured: true,
+    isDemo: false,
+    firstReportedAt: "2026-07-11",
+    lastUpdatedAt: "2026-07-11",
+    lastVerifiedAt: "2026-07-11",
+    summary: "Một bài đăng Threads ẩn danh cáo buộc một thí sinh tại TP.HCM đã sử dụng thiết bị có AI khi ra ngoài phòng thi để tìm đáp án. Bài đăng không cung cấp danh tính, số báo danh, điểm thi cụ thể hoặc bằng chứng có thể kiểm tra độc lập. Tác giả cũng thừa nhận không thi cùng điểm thi với người bị nhắc đến và chênh lệch giữa điểm thi thử với điểm thi thật không phải là bằng chứng pháp lý.",
+    neutralDescription: "Hồ sơ này chỉ ghi nhận nội dung một phản ánh trên mạng xã hội. Tại thời điểm cập nhật, chưa tìm thấy thông báo chính thức xác nhận cơ quan có thẩm quyền đang xác minh hoặc điều tra cáo buộc cụ thể này.",
+    keyFacts: [
+      {id: "hcm-fact-1", statement: "Bài đăng cáo buộc một thí sinh ẩn danh đã mang thiết bị có AI vào khu vực nhà vệ sinh để tìm đáp án trong kỳ thi.", status: "UNVERIFIED", sourceIds: ["threads-tphcm-ai-2026"]},
+      {id: "hcm-fact-2", statement: "Tác giả bài đăng cho rằng thí sinh đã ra ngoài phòng thi khoảng 5–6 lần mà không bị nghi ngờ.", status: "UNVERIFIED", sourceIds: ["threads-tphcm-ai-2026"]},
+      {id: "hcm-fact-3", statement: "Bài đăng nêu mức điểm thi thật từ 9 trở lên trong khi điểm thi thử được mô tả từ dưới trung bình đến khoảng 6 điểm.", status: "UNVERIFIED", sourceIds: ["threads-tphcm-ai-2026"]},
+      {id: "hcm-fact-4", statement: "Tác giả thừa nhận không thi cùng điểm thi và không trực tiếp biết hành vi bị cáo buộc diễn ra thế nào trong kỳ thi tốt nghiệp THPT.", status: "UNVERIFIED", sourceIds: ["threads-tphcm-ai-2026"]},
+      {id: "hcm-fact-5", statement: "Tác giả tự thừa nhận chênh lệch giữa điểm thi thử và điểm thi thật chưa phải bằng chứng pháp lý để kết luận người khác sử dụng AI.", status: "UNVERIFIED", sourceIds: ["threads-tphcm-ai-2026"]},
+      {id: "hcm-fact-6", statement: "Bài đăng nói đã gửi email hoặc tin nhắn đến một số cơ quan và báo chí nhưng chưa nhận được phản hồi chính thức xác nhận vụ việc.", status: "UNVERIFIED", sourceIds: ["threads-tphcm-ai-2026"]},
+    ],
+    reportedMetrics: [
+      {id: "hcm-metric-exits", label: "Lần ra ngoài phòng thi theo lời kể trong bài đăng", value: "5–6", unit: "lần", description: "Con số do tác giả bài đăng nêu, chưa có nguồn độc lập xác nhận.", status: "UNVERIFIED", sourceIds: ["threads-tphcm-ai-2026"], caution: "Không có dữ liệu giám sát hoặc biên bản coi thi được cung cấp.", displayPriority: 1},
+      {id: "hcm-metric-score", label: "Mức điểm thi thật được bài đăng nhắc tới", value: "9+", unit: "điểm", description: "Bài đăng không cung cấp bảng điểm hoặc dữ liệu có thể kiểm tra độc lập.", status: "UNVERIFIED", sourceIds: ["threads-tphcm-ai-2026"], caution: "Điểm tăng không phải bằng chứng gian lận.", displayPriority: 2},
+    ],
+    timeline: [
+      {id: "hcm-timeline-1", date: "2026-07-11", title: "Tiếp nhận nội dung bài đăng để phân loại", description: "Nội dung được ghi nhận dưới dạng phản ánh mạng xã hội chưa kiểm chứng, không phải kết luận về một vụ vi phạm.", status: "UNVERIFIED", sourceIds: ["threads-tphcm-ai-2026"], eventType: "social-report", isMajor: true},
+    ],
+    claims: [
+      {id: "hcm-claim-ai", title: "Sử dụng thiết bị và AI khi ra ngoài phòng thi", statement: "Một thí sinh bị cáo buộc dùng thiết bị có AI trong khu vực nhà vệ sinh để tìm đáp án.", status: "UNVERIFIED", explanation: "Cáo buộc chỉ xuất hiện trong bài đăng Threads ẩn danh và chưa có bằng chứng kiểm tra độc lập.", sourceIds: ["threads-tphcm-ai-2026"], firstReportedAt: "2026-07-11", lastCheckedAt: "2026-07-11", importance: "high", caution: "Không trình bày cáo buộc này như sự thật.", isSensitive: true, isStudentRelated: true},
+      {id: "hcm-claim-score", title: "Điểm thi thật tăng mạnh so với thi thử", statement: "Bài đăng cho rằng điểm tăng từ mức dưới trung bình–6+ lên 9+.", status: "UNVERIFIED", explanation: "Không có dữ liệu điểm kèm theo; tác giả cũng thừa nhận chênh lệch điểm không phải bằng chứng pháp lý.", sourceIds: ["threads-tphcm-ai-2026"], firstReportedAt: "2026-07-11", lastCheckedAt: "2026-07-11", importance: "medium", caution: "Không dùng chênh lệch điểm để kết luận gian lận.", isSensitive: true, isStudentRelated: true},
+    ],
+    proposals: [],
+    people: [],
+    sourceIds: ["threads-tphcm-ai-2026"],
+    corrections: [],
+    relatedIncidentIds: [],
+    searchKeywords: ["TP.HCM", "Threads", "AI", "thi tốt nghiệp 2026", "thiết bị công nghệ"],
+    quickReadFactIds: ["hcm-fact-1", "hcm-fact-2"],
+    studentScope: "Một thí sinh ẩn danh theo bài đăng; không có dữ liệu định danh được cung cấp.",
+    privacyNotes: "Không suy đoán hoặc công bố tên, trường, lớp, điểm thi, số báo danh hay danh tính người bị cáo buộc.",
+    legalDisclaimer: unverifiedDisclaimer,
+  },
   {
     id: "tuyen-quang-thpt-chuyen-2026",
     slug: "diem-thi-toan-bat-thuong-thpt-chuyen-tuyen-quang-2026",
@@ -59,6 +111,7 @@ export const incidents: Incident[] = [
     relatedIncidentIds: [],
     searchKeywords: ["Tuyên Quang", "THPT Chuyên", "điểm thi Toán", "thi tốt nghiệp 2026", "coi thi"],
     quickReadFactIds: ["fact-3", "fact-4"],
+    studentScope: "Một số thí sinh; nguồn chính thức không công bố dữ liệu định danh.",
     privacyNotes: "Không hiển thị tên, ảnh, số báo danh hoặc dữ liệu định danh của thí sinh.",
     legalDisclaimer,
   },
