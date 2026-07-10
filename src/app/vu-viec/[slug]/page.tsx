@@ -1,4 +1,4 @@
-import {ArrowLeft, Calendar, Clock, ClockArrowRotateLeft, Link as LinkIcon, MapPin, ScalesBalanced, ShieldCheck} from "@gravity-ui/icons";
+import {ArrowLeft, Calendar, ChartColumn, Clock, ClockArrowRotateLeft, Link as LinkIcon, MapPin, ScalesBalanced, ShieldCheck} from "@gravity-ui/icons";
 import {Alert, Breadcrumbs, Card, Chip, Link as HeroLink, Separator, Surface} from "@heroui/react";
 import type {Metadata} from "next";
 import {notFound} from "next/navigation";
@@ -25,6 +25,8 @@ export default async function IncidentDetailPage({params}: Props) {
   const incident = incidents.find((item) => item.slug === slug);
   if (!incident) notFound();
   const incidentSources = sources.filter((source) => incident.sourceIds.includes(source.id));
+  const evidenceFacts = incident.keyFacts.filter((fact) => incident.quickEvidenceFactIds.includes(fact.id));
+  const allegationFacts = incident.keyFacts.filter((fact) => !incident.quickEvidenceFactIds.includes(fact.id));
 
   return (
     <main id="noi-dung" className="pb-16">
@@ -37,7 +39,9 @@ export default async function IncidentDetailPage({params}: Props) {
 
       <div className="page-shell grid gap-12 py-12 lg:grid-cols-[minmax(0,1fr)_19rem]">
         <div className="space-y-14">
-          <section aria-labelledby="facts"><div className="mb-6 flex items-center gap-3"><ShieldCheck className="text-accent" width={24} height={24} aria-hidden="true" /><h2 id="facts" className="display-title text-3xl">Dữ kiện chính</h2></div><div className="space-y-4">{incident.keyFacts.map((fact, index) => <Card key={fact.id} variant="secondary"><Card.Content className="flex gap-4"><span className="grid size-8 shrink-0 place-items-center rounded-full bg-accent-soft text-sm font-bold text-accent-soft-foreground">{index + 1}</span><div><p className="leading-7">{fact.statement}</p><div className="mt-3"><StatusChip status={fact.status} /></div></div></Card.Content></Card>)}</div></section>
+          <section aria-labelledby="facts"><div className="mb-6 flex items-center gap-3"><ShieldCheck className="text-accent" width={24} height={24} aria-hidden="true" /><h2 id="facts" className="display-title text-3xl">Dữ kiện chính</h2></div><div className="space-y-4">{allegationFacts.map((fact, index) => <Card key={fact.id} variant="secondary"><Card.Content className="flex gap-4"><span className="grid size-8 shrink-0 place-items-center rounded-full bg-accent-soft text-sm font-bold text-accent-soft-foreground">{index + 1}</span><div><p className="leading-7">{fact.statement}</p><div className="mt-3"><StatusChip status={fact.status} /></div></div></Card.Content></Card>)}</div></section>
+
+          {evidenceFacts.length > 0 && <section aria-labelledby="evidence"><div className="mb-6 flex items-center gap-3"><ChartColumn className="text-accent" width={24} height={24} aria-hidden="true" /><h2 id="evidence" className="display-title text-3xl">Những gì được cung cấp</h2></div><div className="space-y-4">{evidenceFacts.map((fact) => <Card key={fact.id} variant="secondary"><Card.Content><p className="leading-7">{fact.statement}</p><div className="mt-3"><StatusChip status={fact.status} /></div></Card.Content></Card>)}</div></section>}
 
           <section aria-labelledby="status"><div className="mb-6 flex items-center gap-3"><ScalesBalanced className="text-accent" width={24} height={24} aria-hidden="true" /><h2 id="status" className="display-title text-3xl">Tình trạng pháp lý và đề xuất</h2></div><Card><Card.Header><Chip color="warning" variant="soft"><ScalesBalanced width={14} height={14} aria-hidden="true" /><Chip.Label>Tình trạng pháp lý</Chip.Label></Chip><Card.Title>{incident.legalStatus}</Card.Title></Card.Header><Card.Content><p className="prose-copy">Việc khởi tố là bước trong quá trình tố tụng và không đồng nghĩa với kết luận một cá nhân có tội.</p></Card.Content></Card>{incident.proposals.map((proposal) => <Card key={proposal.id} className="mt-4" variant="secondary"><Card.Header><StatusChip status={proposal.status} /><Card.Title>{proposal.title}</Card.Title></Card.Header><Card.Content><p className="prose-copy">{proposal.description}</p><Alert status="warning" className="mt-4"><Alert.Content><Alert.Description>{proposal.caution}</Alert.Description></Alert.Content></Alert></Card.Content></Card>)}</section>
 
