@@ -2,6 +2,21 @@ import type {Source} from "../types/content.ts";
 
 export const sources: Source[] = [
   {
+    id: "threads-quang-tri-exam-2026",
+    title: "Chuỗi ảnh chụp Threads phản ánh nghi vấn can thiệp bài thi tại Quảng Trị",
+    publisher: "Nguồn mạng xã hội tổng hợp",
+    sourceLevel: "LEVEL_4_SOCIAL",
+    sourceType: "Ảnh chụp bài đăng mạng xã hội",
+    publishedAt: "2026-06-13",
+    accessedAt: "2026-07-11",
+    description: "Chuỗi ảnh do người dùng cung cấp, gồm lời cáo buộc về một lãnh đạo trường, một số giám thị và hai thí sinh ẩn danh.",
+    supportsClaimIds: ["qt-claim-answer-sheet", "qt-claim-outside-help", "qt-fact-1", "qt-fact-2", "qt-fact-3", "qt-fact-4", "qt-fact-5", "qt-fact-6"],
+    isOfficial: false,
+    isPrimary: true,
+    isAccessible: false,
+    notes: "Không lưu tên tài khoản, tên viết tắt, số báo danh hoặc tên trường. Ảnh không kèm hồ sơ thi hay kết luận của cơ quan có thẩm quyền.",
+  },
+  {
     id: "threads-tphcm-ai-2026",
     title: "Bài đăng Threads phản ánh nghi vấn sử dụng AI trong kỳ thi tại TP.HCM",
     publisher: "Tài khoản Threads ẩn danh",

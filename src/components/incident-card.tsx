@@ -8,6 +8,7 @@ import {InternalLink} from "./internal-link";
 export function IncidentCard({incident, featured = false}: {incident: Incident; featured?: boolean}) {
   const metric = incident.reportedMetrics[0];
   const quickFacts = incident.keyFacts.filter((fact) => incident.quickReadFactIds.includes(fact.id));
+  const evidenceFacts = incident.keyFacts.filter((fact) => incident.quickEvidenceFactIds.includes(fact.id));
   return (
     <Card className="h-full" variant={featured ? "tertiary" : "default"}>
       <Card.Header className="gap-3"><div className="flex flex-wrap items-center gap-3"><StatusChip status={incident.overallStatus} /><span className="text-sm text-muted">Cập nhật {formatDate(incident.lastUpdatedAt)}</span></div><Card.Title className={`display-title leading-tight ${featured ? "text-3xl md:text-4xl" : "text-2xl"}`}>{incident.shortTitle}</Card.Title><Card.Description>{incident.schoolOrTestSite}</Card.Description></Card.Header>
@@ -22,6 +23,10 @@ export function IncidentCard({incident, featured = false}: {incident: Incident; 
           <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted"><ScalesBalanced width={15} height={15} aria-hidden="true" />{incident.overallStatus === "UNVERIFIED" ? "Cáo buộc cần kiểm chứng" : "Cách vi phạm được công bố"}</p>
           <ul className="list-disc space-y-2 pl-5">{quickFacts.map((fact) => <li key={fact.id}><mark className="rounded bg-danger-soft px-1 font-bold leading-7 text-danger-soft-foreground">{fact.statement}</mark></li>)}</ul>
         </div>
+        {evidenceFacts.length > 0 && <div>
+          <p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-muted"><ChartColumn width={15} height={15} aria-hidden="true" />Những gì được cung cấp</p>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-6">{evidenceFacts.map((fact) => <li key={fact.id}>{fact.statement}</li>)}</ul>
+        </div>}
         <p className="border-l-2 border-warning pl-4 text-sm leading-6"><strong>Pháp lý:</strong> {incident.legalStatus}. Khởi tố không phải là bản án kết tội.</p>
       </Card.Content>
       <Card.Footer><InternalLink href={`/vu-viec/${incident.slug}`} className="inline-flex items-center gap-2 font-bold">Đọc nguồn và diễn biến <ArrowRight width={17} height={17} aria-hidden="true" /></InternalLink></Card.Footer>

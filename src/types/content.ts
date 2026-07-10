@@ -139,6 +139,7 @@ export interface Incident {
   relatedIncidentIds: string[];
   searchKeywords: string[];
   quickReadFactIds: string[];
+  quickEvidenceFactIds: string[];
   studentScope: string;
   privacyNotes: string;
   legalDisclaimer: string;

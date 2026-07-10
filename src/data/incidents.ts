@@ -3,9 +3,61 @@ import type {Incident} from "../types/content.ts";
 const official = ["tq-press-2026-07-09"];
 
 export const legalDisclaimer = "Website tổng hợp thông tin từ các nguồn được dẫn lại. Việc khởi tố vụ án hoặc khởi tố bị can không phải là bản án kết tội. Trách nhiệm pháp lý chỉ được xác định bằng bản án có hiệu lực hoặc kết luận của cơ quan có thẩm quyền.";
-export const unverifiedDisclaimer = "Đây là cáo buộc từ nguồn mạng xã hội chưa được kiểm chứng. Chưa có xác nhận cơ quan có thẩm quyền đã thụ lý, điều tra hoặc kết luận. Chênh lệch điểm và lời kể gián tiếp không đủ để xác định một thí sinh đã gian lận.";
+export const unverifiedDisclaimer = "Đây là cáo buộc từ nguồn mạng xã hội chưa được kiểm chứng. Chưa có xác nhận cơ quan có thẩm quyền đã thụ lý, điều tra hoặc kết luận. Ảnh chụp bài đăng, chênh lệch điểm và lời kể gián tiếp không đủ để xác định một cá nhân đã gian lận.";
 
 export const incidents: Incident[] = [
+  {
+    id: "quang-tri-threads-can-thiep-bai-thi-2026",
+    slug: "cao-buoc-chua-kiem-chung-can-thiep-bai-thi-quang-tri-2026",
+    title: "Cáo buộc chưa kiểm chứng về can thiệp bài thi tại một trường THPT ở Quảng Trị",
+    shortTitle: "Nghi vấn can thiệp bài thi tại một trường THPT ở Quảng Trị",
+    location: "Quảng Trị",
+    province: "Quảng Trị",
+    schoolOrTestSite: "Một trường THPT tại Quảng Trị; không công bố tên khi chưa có xác nhận chính thức",
+    examName: "Kỳ thi tốt nghiệp THPT năm 2026",
+    examYear: 2026,
+    subject: "Bốn môn thi theo lời cáo buộc; chưa có hồ sơ đối chiếu",
+    incidentType: "Phản ánh nghi can thiệp bài thi",
+    overallStatus: "UNVERIFIED",
+    legalStatus: "Chưa có xác nhận chính thức về việc thụ lý, xác minh hoặc điều tra đúng chuỗi cáo buộc này",
+    featured: true,
+    isDemo: false,
+    firstReportedAt: "2026-06-13",
+    lastUpdatedAt: "2026-07-11",
+    lastVerifiedAt: "2026-07-11",
+    summary: "Các bài đăng cáo buộc một người được mô tả là lãnh đạo trường đã tác động để một số giám thị hỗ trợ hai thí sinh được cho là người thân. Cơ chế bị cáo buộc gồm chỉ đáp án, lấy đáp án từ thí sinh cùng mã đề và đưa đề ra ngoài để nhờ người khác giải. Chưa có tài liệu độc lập xác nhận các nội dung này.",
+    neutralDescription: "Hồ sơ chỉ giữ vai trò không định danh của những người bị tố cáo, lý do họ bị nghi ngờ và loại tài liệu người phản ánh đưa ra. Nội dung về tài khoản đăng, mâu thuẫn cá nhân và nhân sự văn phòng không liên quan trực tiếp đã được loại bỏ.",
+    keyFacts: [
+      {id: "qt-fact-1", statement: "Một người được bài đăng mô tả là lãnh đạo trường bị cáo buộc đã tác động tới giám thị để hỗ trợ hai thí sinh được cho là người thân.", status: "UNVERIFIED", sourceIds: ["threads-quang-tri-exam-2026"]},
+      {id: "qt-fact-2", statement: "Một giám thị bị cáo buộc yêu cầu thí sinh cùng mã đề chép đáp án lên giấy trắng rồi chuyển tờ giấy cho một thí sinh khác.", status: "UNVERIFIED", sourceIds: ["threads-quang-tri-exam-2026"]},
+      {id: "qt-fact-3", statement: "Một giám thị và một nhân sự trường bị cáo buộc đưa nội dung đề ra ngoài để dùng công cụ hỗ trợ giải, sau đó chuyển đáp án trở lại phòng thi.", status: "UNVERIFIED", sourceIds: ["threads-quang-tri-exam-2026"]},
+      {id: "qt-fact-4", statement: "Các bài đăng còn cáo buộc việc chỉ đáp án trực tiếp, xem bài của thí sinh khác và gọi giám thị ra ngoài phòng thi.", status: "UNVERIFIED", sourceIds: ["threads-quang-tri-exam-2026"]},
+      {id: "qt-fact-5", statement: "Tài liệu được cung cấp chỉ gồm ảnh chụp các bài đăng, lời kể được cho là từ người cùng phòng, một khẳng định về điểm giống nhau và mức điểm thi thử 2,1; không có bảng điểm hay hồ sơ đối chiếu kèm theo.", status: "UNVERIFIED", sourceIds: ["threads-quang-tri-exam-2026"]},
+      {id: "qt-fact-6", statement: "Chưa được cung cấp bài thi, giấy nháp, camera, biên bản phòng thi, chứng từ tiền, lời khai chính thức hoặc kết quả đối chiếu mã đề và đáp án.", status: "UNVERIFIED", sourceIds: ["threads-quang-tri-exam-2026"]},
+    ],
+    reportedMetrics: [
+      {id: "qt-metric-subjects", label: "môn thi bị cáo buộc có hỗ trợ đáp án", value: "4", unit: "môn", description: "Số lượng do các bài đăng nêu, chưa được xác minh độc lập.", status: "UNVERIFIED", sourceIds: ["threads-quang-tri-exam-2026"], caution: "Không có bài thi hoặc biên bản coi thi kèm theo.", displayPriority: 1},
+      {id: "qt-metric-mock", label: "điểm thi thử môn Toán được bài đăng nhắc tới", value: "2,1", unit: "điểm", description: "Con số trong lời cáo buộc, không có bảng điểm chứng minh.", status: "UNVERIFIED", sourceIds: ["threads-quang-tri-exam-2026"], caution: "Điểm thi thử không chứng minh hành vi gian lận.", displayPriority: 2},
+    ],
+    timeline: [
+      {id: "qt-timeline-1", date: "2026-06-13", title: "Xuất hiện chuỗi phản ánh trên mạng xã hội", description: "Các cáo buộc bắt đầu được đăng và chia sẻ; chưa phải thông báo của cơ quan có thẩm quyền.", status: "UNVERIFIED", sourceIds: ["threads-quang-tri-exam-2026"], eventType: "social-report", isMajor: true},
+    ],
+    claims: [
+      {id: "qt-claim-answer-sheet", title: "Chuyển đáp án từ thí sinh cùng mã đề", statement: "Một thí sinh bị yêu cầu chép đáp án để chuyển cho thí sinh khác.", status: "UNVERIFIED", explanation: "Chỉ có lời kể trong ảnh chụp bài đăng, chưa có giấy nháp, bài thi hoặc lời khai chính thức.", sourceIds: ["threads-quang-tri-exam-2026"], firstReportedAt: "2026-06-13", lastCheckedAt: "2026-07-11", importance: "high", caution: "Không trình bày cáo buộc này như sự thật.", isSensitive: true, isStudentRelated: true},
+      {id: "qt-claim-outside-help", title: "Đưa đề ra ngoài để nhận hỗ trợ", statement: "Nội dung đề bị cáo buộc đã được đưa ra ngoài rồi chuyển đáp án trở lại phòng thi.", status: "UNVERIFIED", explanation: "Không có vật chứng, dữ liệu giám sát hoặc biên bản phòng thi được cung cấp.", sourceIds: ["threads-quang-tri-exam-2026"], firstReportedAt: "2026-06-13", lastCheckedAt: "2026-07-11", importance: "high", caution: "Không trình bày cáo buộc này như sự thật.", isSensitive: true, isStudentRelated: true},
+    ],
+    proposals: [],
+    people: [],
+    sourceIds: ["threads-quang-tri-exam-2026"],
+    corrections: [],
+    relatedIncidentIds: [],
+    searchKeywords: ["Quảng Trị", "Threads", "can thiệp bài thi", "giám thị", "thi tốt nghiệp 2026"],
+    quickReadFactIds: ["qt-fact-1", "qt-fact-2", "qt-fact-3"],
+    quickEvidenceFactIds: ["qt-fact-5", "qt-fact-6"],
+    studentScope: "Hai thí sinh ẩn danh được bài đăng mô tả là người thân của một lãnh đạo trường; không hiển thị tên viết tắt, số báo danh, lớp hoặc trường.",
+    privacyNotes: "Không công bố danh tính tài khoản đăng, tên viết tắt, số báo danh, lớp, tên trường hoặc suy đoán danh tính người bị cáo buộc.",
+    legalDisclaimer: unverifiedDisclaimer,
+  },
   {
     id: "tphcm-threads-nghi-su-dung-ai-2026",
     slug: "cao-buoc-chua-kiem-chung-su-dung-ai-thi-tphcm-2026",
@@ -53,6 +105,7 @@ export const incidents: Incident[] = [
     relatedIncidentIds: [],
     searchKeywords: ["TP.HCM", "Threads", "AI", "thi tốt nghiệp 2026", "thiết bị công nghệ"],
     quickReadFactIds: ["hcm-fact-1", "hcm-fact-2"],
+    quickEvidenceFactIds: ["hcm-fact-4", "hcm-fact-5"],
     studentScope: "Một thí sinh ẩn danh theo bài đăng; không có dữ liệu định danh được cung cấp.",
     privacyNotes: "Không suy đoán hoặc công bố tên, trường, lớp, điểm thi, số báo danh hay danh tính người bị cáo buộc.",
     legalDisclaimer: unverifiedDisclaimer,
@@ -111,6 +164,7 @@ export const incidents: Incident[] = [
     relatedIncidentIds: [],
     searchKeywords: ["Tuyên Quang", "THPT Chuyên", "điểm thi Toán", "thi tốt nghiệp 2026", "coi thi"],
     quickReadFactIds: ["fact-3", "fact-4"],
+    quickEvidenceFactIds: [],
     studentScope: "Một số thí sinh; nguồn chính thức không công bố dữ liệu định danh.",
     privacyNotes: "Không hiển thị tên, ảnh, số báo danh hoặc dữ liệu định danh của thí sinh.",
     legalDisclaimer,
