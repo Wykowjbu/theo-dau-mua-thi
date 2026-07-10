@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "@heroui/styles";
+@import "../../theme.css";
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-sans); }
+a { text-underline-offset: 0.2em; }
+::selection { background: var(--accent-soft); color: var(--foreground); }
+
+.page-shell { width: min(100% - 2rem, 76rem); margin-inline: auto; }
+.display-title { font-family: var(--font-sans); font-weight: 700; letter-spacing: -0.035em; text-wrap: balance; }
+.eyebrow { color: var(--muted); font-size: .72rem; font-weight: 750; letter-spacing: .14em; text-transform: uppercase; }
+.rule-grid { background-image: linear-gradient(to right, color-mix(in oklab, var(--foreground) 7%, transparent) 1px, transparent 1px); background-size: 25% 100%; }
+.prose-copy { color: var(--muted); line-height: 1.78; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
